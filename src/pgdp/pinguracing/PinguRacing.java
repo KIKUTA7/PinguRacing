@@ -16,7 +16,7 @@ public class PinguRacing {
         boolean f=false;
         int t=-1;
         while (t<0) {
-        if(f==false) {t=readInt("Race duration:");t=true;}
+        if(f==false) {t=readInt("Race duration:");f=true;}
         else if(t<0) {t=readInt("Please do not enter a negative number:");}
         }
         if(t==0) write("Draw!");
