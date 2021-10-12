@@ -13,7 +13,14 @@ public class PinguRacing {
 
         int x= readInt("Alan starting position:");
         int y=readInt("Bjarne starting position:");
-        int t=readInt("Race duration:");
+        boolean f=false;
+        int t=-1;
+        while (t<0) {
+        if(f==false) {t=readInt("Race duration:");t=true;}
+        else if(t<0) {t=readInt("Please do not enter a negative number:");}
+        }
+        if(t==0) write("Draw!");
+        else{
         int spx=0,spy=0;
 int i=0;
 while (i<(t/2))
@@ -44,8 +51,9 @@ while (i<t)
 
 }
 if(x>y) {write("Alan wins!");}
-else write("Bjarne wins!");
+else if(y>x) write("Bjarne wins!");
+else write("Draw!");
 
-
+}
     }
 }
