@@ -11,49 +11,80 @@ public class PinguRacing {
     }
     public static void main(String[] args) {
 
-        int x= readInt("Alan starting position:");
-        int y=readInt("Bjarne starting position:");
-        boolean f=false;
-        int t=-1;
-        while (t<0) {
-        if(f==false) {t=readInt("Race duration:");f=true;}
-        else  {t=readInt("Please do not enter a negative number:");}
+        int PosA = readInt("Alan starting position:");
+        int PosB = readInt("Bjarne starting position:");
+        boolean f = false;
+        int t = -1;
+        while (t < 0) {
+            if (f == false) {
+                t = readInt("Race duration:");
+                f = true;
+            } else {
+                t = readInt("Please do not enter a negative number:");
+            }
         }
-        if(t==0) write("Draw!");
-        else{
-        int spx=0,spy=0;
-int i=0;
-while (i<(t/2))
-{
-    if (x%10==4) {spx=spx / 2 + 1;
-        spx = check(spx);
-    x+=spx;}
-    else {spx+=7;spx = check(spx);x+=spx;}
-    if(y%13==0) {spy=spy*2+1;spy = check(spy);y+=spy;
-    }
-    else {spy+=3;spy = check(spy);y+=spy;}
-    System.out.println("t = "+i);
-    System.out.println("Alan position = "+x+"; speed = "+spx);
-    write("Bjarne position = "+y+"; speed = "+spy);
-    i++;
-}
-while (i<t)
-{
-    if(i==(t*3)/5 || i==(t*4)/5) {spx=spx/4;spx=check(spx);x+=spx;}
-    else if(i==(t*4)/5) {spx=spx/4;spx=check(spx);x+=spx;}
-    else {spx++;spx=check(spx);x+=spx;}
-    if(i>=t-13) {spy=spy/2;spy=check(spy);y+=spy;}
-    else {spy--;spy=check(spy);y+=spy;}
-    System.out.println("t = "+i);
-    System.out.println("Alan position = "+x+"; speed = "+spx);
-    write("Bjarne position = "+y+"; speed = "+spy);
-    i++;
+        if (t == 0) write("Draw!");
+        else {
+            int speA = 0, speB = 0;
+            int i = 0;
+            while (i < (t / 2)) {
+                if (PosA % 10 == 4) {
+                    speA = speA / 2 + 1;
+                    speA = check(speA);
+                    PosA += speA;
+                } else {
+                    speA += 7;
+                    speA = check(speA);
+                    PosA += speA;
+                }
+                if (PosB % 13 == 0) {
+                    speB = speB * 2 + 1;
+                    speB = check(speB);
+                    PosB += speB;
+                } else {
+                    speB += 3;
+                    speB = check(speB);
+                    PosB += speB;
+                }
+                System.out.println("t = " + i);
+                System.out.println("Alan position = " + PosA + "; speed = " + speA);
+                write("Bjarne position = " + PosB + "; speed = " + speB);
+                i++;
+            }
+            while (i < t) {
+                if (i == (t * 3) / 5 || i == (t * 4) / 5) {
+                    speA = speA / 4;
+                    speA = check(speA);
+                    PosA += speA;
+                } else if (i == (t * 4) / 5) {
+                    speA = speA / 4;
+                    speA = check(speA);
+                    PosA += speA;
+                } else {
+                    speA++;
+                    speA = check(speA);
+                    PosA += speA;
+                }
+                if (i >= t - 13) {
+                    speB = speB / 2;
+                    speB = check(speB);
+                    PosB += speB;
+                } else {
+                    speB--;
+                    speB = check(speB);
+                    PosB += speB;
+                }
+                System.out.println("t = " + i);
+                System.out.println("Alan position = " + PosA + "; speed = " + speA);
+                write("Bjarne position = " + PosB + "; speed = " + speB);
+                i++;
 
-}
-if(x>y) {write("Alan wins!");}
-else if(y>x) write("Bjarne wins!");
-else write("Draw!");
+            }
+            if (PosA > PosB) {
+                write("Alan wins!");
+            } else if (PosB > PosA) write("Bjarne wins!");
+            else write("Draw!");
 
-}
+        }
     }
 }
