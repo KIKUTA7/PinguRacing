@@ -43,7 +43,7 @@ public class PinguRacing {
                         speA = check(speA);
                         PosA += speA;
                     }
-                
+
 
                 if (PosB % 13 == 0) {
                     speB = speB * 2 + 1;
@@ -64,11 +64,8 @@ public class PinguRacing {
                     speA = speA / 4;
                     speA = check(speA);
                     PosA += speA;
-                } else if (i == (t * 4) / 5) {
-                    speA = speA / 4;
-                    speA = check(speA);
-                    PosA += speA;
-                } else {
+                }
+                 else {
                     speA++;
                     speA = check(speA);
                     PosA += speA;
