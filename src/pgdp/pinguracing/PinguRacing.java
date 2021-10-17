@@ -28,15 +28,23 @@ public class PinguRacing {
             int speA = 0, speB = 0;
             int i = 0;
             while (i < (t / 2)) {
-                if (PosA % 10 == 4) {
-                    speA = speA / 2 + 1;
+
+                    if(PosA % 10 ==  -4) {
+                        speA = speA / 2 + 1;
                     speA = check(speA);
-                    PosA += speA;
-                } else {
-                    speA += 7;
-                    speA = check(speA);
-                    PosA += speA;
-                }
+                    PosA += speA;}
+                    else if (PosA % 10 == 4 ) {
+
+                        speA = speA / 2 + 1;
+                        speA = check(speA);
+                        PosA += speA;
+                    } else {
+                        speA += 7;
+                        speA = check(speA);
+                        PosA += speA;
+                    }
+                
+
                 if (PosB % 13 == 0) {
                     speB = speB * 2 + 1;
                     speB = check(speB);
