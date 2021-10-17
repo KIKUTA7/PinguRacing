@@ -11,7 +11,7 @@ public class PinguRacing {
     }
     public static void main(String[] args) {
 
-        int PosA = readInt("Alan starting position:");
+         int PosA = readInt("Alan starting position:");
         int PosB = readInt("Bjarne starting position:");
         boolean f = false;
         int t = -1;
@@ -23,8 +23,8 @@ public class PinguRacing {
                 t = readInt("Please do not enter a negative number:");
             }
         }
-        if (t == 0) write("Draw!");
-        else {
+
+
             int speA = 0, speB = 0;
             int i = 0;
             while (i < (t / 2)) {
@@ -90,6 +90,6 @@ public class PinguRacing {
             } else if (PosB > PosA) write("Bjarne wins!");
             else write("Draw!");
 
-        }
+        
     }
 }
